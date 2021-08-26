@@ -8,7 +8,7 @@ class Chord():
         th_type=None,
         extra_notes=[],
         sus_type=None,
-        bass_slash_not=None
+        bass_slash_note=None
     ):
         self.pitch = pitch
         # TODO: Singular
@@ -18,7 +18,7 @@ class Chord():
         self.th_type = th_type
         self.extra_notes = extra_notes
         self.sus_type = sus_type
-        self.bass_slash_note = bass_slash_not
+        self.bass_slash_note = bass_slash_note
 
     @staticmethod
     def is_valid_accidental(accidental: str):

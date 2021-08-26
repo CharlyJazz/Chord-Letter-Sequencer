@@ -44,8 +44,8 @@ class ChordConstructorRandom():
         return notes_list_final
 
     def pick_bass_slash_note(self):
-        return "{0}{1}".format(
-            np.random.choice(self.extra_note_accidentals),
+        return "{0}".format(
+            # np.random.choice(self.extra_note_accidentals),
             self.pick_pitch()
         )
 
