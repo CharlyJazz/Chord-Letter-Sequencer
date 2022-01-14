@@ -6,7 +6,7 @@ class Chord():
         quality,
         interval_5th_accidental=None,
         th_type=None,
-        extra_notes=[],
+        extra_notes=None,
         sus_type=None,
         bass_slash_note=None
     ):

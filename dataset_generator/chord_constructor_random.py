@@ -54,10 +54,11 @@ class ChordConstructorRandom():
         accidental = self.pick_accidental()
         quality = self.pick_quality()
 
-        chord = Chord(
+        new_chord = Chord(
             fundamental_pitch,
             accidental,
-            quality
+            quality,
+            extra_notes=[]
         )
 
         if quality == 'major' or quality == "minor":
@@ -70,34 +71,34 @@ class ChordConstructorRandom():
             if optional_interval_5th_accidental:
                 interval_5th_accidental = self.pick_accidental()
 
-                chord.add_interval_5th_accidental(
+                new_chord.add_interval_5th_accidental(
                     interval_5th_accidental
                 )
 
             if optional_th_type:
                 th_type = self.pick_th_type()
 
-                chord.add_pick_th_type(
+                new_chord.add_pick_th_type(
                     th_type
                 )
 
             if optional_sus_type and not optional_th_type and not optional_interval_5th_accidental:
                 sus_type = self.pick_sus_type()
 
-                chord.add_pick_sus_type(
+                new_chord.add_pick_sus_type(
                     sus_type
                 )
 
             if optional_add_notes:
-                chord.add_extra_note(self.pick_notes())
+                new_chord.add_extra_note(self.pick_notes())
 
         elif self.add_or_not():
-            chord.add_extra_note(self.pick_notes())
+            new_chord.add_extra_note(self.pick_notes())
 
         if self.add_or_not():
-            chord.add_bass_slash_note(self.pick_bass_slash_note())
+            new_chord.add_bass_slash_note(self.pick_bass_slash_note())
 
-        return chord
+        return new_chord
 
     def add_or_not(self):
         return bool(random.getrandbits(1))
