@@ -31,7 +31,7 @@ class ChordConstructorRandom():
 
     def pick_notes(self):
         notes_list = np.unique(np.random.choice(
-            self.extra_notes, size=np.random.randint(1, 3)))
+            self.extra_notes, size=np.random.randint(1, 2)))
         notes_list_final = []
         for i in notes_list:
             notes_list_final.append(
@@ -91,9 +91,6 @@ class ChordConstructorRandom():
 
             if optional_add_notes:
                 new_chord.add_extra_note(self.pick_notes())
-
-        elif self.add_or_not():
-            new_chord.add_extra_note(self.pick_notes())
 
         if self.add_or_not():
             new_chord.add_bass_slash_note(self.pick_bass_slash_note())

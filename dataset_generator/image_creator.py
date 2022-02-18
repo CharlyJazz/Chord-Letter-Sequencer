@@ -60,7 +60,7 @@ class ImageCreator():
         self.font_size_for_symbols_to_top_and_small = choice(range(self.font_size - 15, self.font_size - 5))
         self.font_family = choice(self.fonts_path)
         self.truetype = ImageFont.truetype(self.font_family, self.font_size)
-        self.image = Image.new('RGB', (280, 60), color=(255, 255, 255))
+        self.image = Image.new('RGB', (200, 50), color=(255, 255, 255))
         self.draw = ImageDraw.Draw(self.image)
 
         # Array of functions to split concerns and condionality
