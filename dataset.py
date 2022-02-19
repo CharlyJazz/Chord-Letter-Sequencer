@@ -34,7 +34,7 @@ class DataSet:
         
         # Mapping characters to integers
         self.char_to_num = layers.experimental.preprocessing.StringLookup(
-            vocabulary=list(characters), num_oov_indices=0, mask_token=None)
+            vocabulary=list(characters), num_oov_indices=1, mask_token=None)
 
         # Mapping integers back to original characters
         self.num_to_char = layers.experimental.preprocessing.StringLookup(

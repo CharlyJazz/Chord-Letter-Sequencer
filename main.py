@@ -13,7 +13,7 @@ if __name__=='__main__':
     
     parser.add_argument('--resume', type=non_or_str, help='resume from a checkpoint')
     
-    parser.add_argument('--dataset', type=non_or_str, default="./dataset",help='dataset for training/evaluation')
+    parser.add_argument('--dataset', type=non_or_str, default="./dataset", help='dataset for training/evaluation')
     
     parser.add_argument('--epochs', type=int, default=100, help='Number of epochs')
     
@@ -31,7 +31,7 @@ if __name__=='__main__':
     parser.add_argument('--interval', type=int, default=150)
     
     # To evaluate a single image
-    parser.add_argument('--eval_img', type=non_or_str,help='Predict on single image')
+    parser.add_argument('--eval_img', type=non_or_str, help='Predict on single image')
     
     args = parser.parse_args()    
 
@@ -47,3 +47,4 @@ if __name__=='__main__':
         trainer.train()
 
 # python3 main.py --dataset ./dataset I am not using pipenv in the mac !
+# python3 main.py --resume ./checkpoint/best.h5 --eval_img './dataset/E minor.png'
