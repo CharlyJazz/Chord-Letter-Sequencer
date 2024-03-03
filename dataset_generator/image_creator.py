@@ -1,6 +1,7 @@
 from PIL import Image, ImageDraw, ImageFont
 from chord import Chord
 import random
+import os
 
 # import cv2
 
@@ -21,9 +22,10 @@ class ImageCreator():
     def __init__(self, chord_instance: Chord, debug_mode=True):
         self.debug_mode = debug_mode
         self.chord = chord_instance
+        self.root = os.path.dirname(os.path.realpath(__file__))
         self.fonts_path = [
-            "/Users/charlyjazz/Charlyjazz/Chord-Letter-Sequencer/dataset_generator/fonts/Cooljazz.ttf",
-            "/Users/charlyjazz/Charlyjazz/Chord-Letter-Sequencer/dataset_generator/fonts/arial.ttf"
+            f"{self.root}/fonts/Cooljazz.ttf",
+            f"{self.root}/fonts/arial.ttf"
         ]
         # Each key is the label value of the symbol and
         # we going to use severals symbol versions for the

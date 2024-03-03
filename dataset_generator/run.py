@@ -32,9 +32,9 @@ if __name__ == '__main__':
             image_creator.create_image()
             # Lol
             label = str(image_creator.chord).replace("/", " slash ")
-            image_creator.image.save(f"/{args.path}/{label}.png")
+            image_creator.image.save(f"{args.path}/{label}.png")
     else:
         image_creator = ImageCreator(ChordConstructorRandom().chord_creation_flow())
         image_creator.create_image()
 
-# python3 dataset_generator/run.py --path /Users/charlyjazz/Charlyjazz/Chord-Letter-Sequencer/dataset --count 2
+# python3 run.py --path ../dataset --count 2
